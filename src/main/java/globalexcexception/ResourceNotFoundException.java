@@ -1,8 +1,8 @@
 package globalexcexception;
 
-public class ResourceNotFoundException {
+public class ResourceNotFoundException extends Throwable {
 
-	public Object getMessage() {
+	public String getMessage() {
 		return null;
 	}
 
