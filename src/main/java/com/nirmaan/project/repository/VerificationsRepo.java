@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.nirmaan.project.entity.Verifications;
 
 @Repository
-public interface VerificationsRepo extends JpaRepository<Verifications, Integer> {
+public interface VerificationsRepo extends JpaRepository<Verifications, Long> {
 
 }

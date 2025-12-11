@@ -28,7 +28,7 @@ public class OnBoard {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ManyToMany
-	private int onBoard_Id;
+	private long onBoard_Id;
 	
 	private long accountNumber;
 	private String bankName;

@@ -20,7 +20,7 @@ public class PersonalDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ManyToMany
-	private int personal_id;
+	private long personal_id;
 
 	private String userName;
 	private int mobileNumber;

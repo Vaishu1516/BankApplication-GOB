@@ -9,13 +9,13 @@ import lombok.Data;
 @Data
 public class ApiResponse<T> {
  
-	private LocalDateTime timeStap=LocalDateTime.now(); //for security layer
+	private LocalDateTime timestamp=LocalDateTime.now(); //for security layer
 	
 	private String message;
 	private T data;
 	private HttpStatus status;
 	
-	
-	
-	
+	public static Object builder() {
+		return null;
+	}
 }
