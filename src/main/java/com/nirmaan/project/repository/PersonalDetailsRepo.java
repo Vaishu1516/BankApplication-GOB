@@ -8,4 +8,6 @@ import com.nirmaan.project.entity.PersonalDetails;
 @Repository
 public interface PersonalDetailsRepo extends JpaRepository<PersonalDetails, Long>{
 
+	
+
 }
