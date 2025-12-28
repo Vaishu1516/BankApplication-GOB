@@ -1,5 +1,6 @@
 package com.nirmaan.project.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,23 +14,24 @@ public class PersonalDetailsService {
 
 	@Autowired
 	public PersonalDetailsRepo personalRepo;
+	
+	public List<PersonalDetails> getAll()
+	{
+		return personalRepo.findAll();
+				}
 
 	public PersonalDetails createDetails(PersonalDetails pd) {
 
 		return personalRepo.save(pd);
 	}
 
-	public PersonalDetails getExistingDetails(long id) {
-		return personalRepo.findById(id).get();
+	public Optional<PersonalDetails> getExistingDetails(long id) {
+		return personalRepo.findById(id);
 	}
 
-	public PersonalDetails updateDetails(long id, PersonalDetails newdata) {
-		PersonalDetails olddata = getExistingDetails(id);
-		olddata.setVerifications(newdata.getVerifications());
-		return personalRepo.save(olddata);
-	}
+	
 
-	public Optional<PersonalDetails> deleteDetails(long id, String name) {
+	public Optional<PersonalDetails> deleteDetails(long id) {
 		Optional<PersonalDetails> pd = personalRepo.findById(id);
 		pd.ifPresent(e -> personalRepo.delete(e));
 		return pd;

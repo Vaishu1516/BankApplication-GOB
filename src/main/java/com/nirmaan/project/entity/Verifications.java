@@ -13,6 +13,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
@@ -22,7 +23,7 @@ public class Verifications {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long verifications_Id;
+	private Long verifications_Id;
 
 	@Enumerated(EnumType.STRING)
 	private VerificationStatus aadharNumber;
@@ -35,6 +36,7 @@ public class Verifications {
 	private String email;
 
 	@ManyToOne
+	@JoinColumn(name = "personalId")
 	@JsonBackReference
 	public PersonalDetails personal_Details;
 }

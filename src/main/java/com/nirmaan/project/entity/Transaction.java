@@ -3,8 +3,9 @@ package com.nirmaan.project.entity;
 import java.time.LocalDateTime;
 
 
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.nirmaan.project.Kyc;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,12 +22,12 @@ public class Transaction {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long transaction_id;
+	private Long transaction_id;
 
 	@ManyToOne
 	@JsonBackReference
 	@JoinColumn(name = "kyc_Id")
-	private Kyc kycVerifications;
+	private KycModel kycVerifications;
 
 	@ManyToOne
 	@JsonBackReference

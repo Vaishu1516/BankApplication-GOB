@@ -1,6 +1,7 @@
 package com.nirmaan.project.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.nirmaan.project.Kyc;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -18,12 +19,12 @@ public class KycModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long kyc_Id;
+	private Long kyc_Id;
 
 	@ManyToOne
 	@JsonBackReference
 	public Verifications kyc_Verifications;
 
 	@Enumerated(EnumType.STRING)
-	private KycModel kyc_Status;
+	private Kyc kyc_Status;
 }

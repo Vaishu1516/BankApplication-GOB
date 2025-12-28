@@ -1,5 +1,6 @@
 package com.nirmaan.project.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,17 +13,22 @@ import com.nirmaan.project.repository.TransactionRepo;
 public class TransactionService {
 	@Autowired
 	public TransactionRepo transactionRepo;
+	
+	public List<Transaction> getAll()
+	{
+		return transactionRepo.findAll();
+	}
 
 	public Transaction createTransactionDetails(Transaction transaction) {
 		return transactionRepo.save(transaction);
 
 	}
 
-	public Transaction getExistingTransactionDetails(long id) {
-		return transactionRepo.findById(id).get();
+	public Optional<Transaction> getExistingTransactionDetails(long id) {
+		return transactionRepo.findById(id);
 	}
 
-	public Optional<Transaction> deleteDetails(long id, String name) {
+	public Optional<Transaction> deleteDetails(long id) {
 		Optional<Transaction> transaction = transactionRepo.findById(id);
 		transaction.ifPresent(e -> transactionRepo.delete(e));
 		return transaction;

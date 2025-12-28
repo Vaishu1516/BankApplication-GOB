@@ -1,4 +1,4 @@
-package globalexcexception;
+ package globalexcexception;
 
 import org.apache.coyote.BadRequestException;
 import org.springframework.http.HttpStatus;

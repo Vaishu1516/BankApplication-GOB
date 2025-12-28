@@ -7,7 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
+
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
@@ -17,42 +17,37 @@ public class Info {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@ManyToMany
-	private long infoId;
+
+	private Long infoId;
 
 	@ManyToOne
 	@JoinColumn(name = "onBoard_Id")
 	@JsonBackReference
 	private OnBoard onBoard;
-	
+
 	@ManyToOne
-	@JoinColumn(name="kyc_Id")
+	@JoinColumn(name = "kyc_Id")
 	@JsonBackReference
 	private KycModel kycmodel;
-	
+
 	@ManyToOne
-	@JoinColumn(name="kyc_Status")
+	@JoinColumn(name = "kyc_Status")
 	@JsonBackReference
 	private KycModel kycStatus;
-	
+
 	@ManyToOne
-	@JoinColumn(name="kyc_Verifications")
+	@JoinColumn(name = "kyc_Verifications")
 	@JsonBackReference
 	private KycModel kycVerification;
-	
+
 	@ManyToOne
-	@JoinColumn(name="supportId")
+	@JoinColumn(name = "supportId")
 	@JsonBackReference
 	private Support supportId;
-	
+
 	@ManyToOne
-	@JoinColumn(name="review")
+	@JoinColumn(name = "review")
 	@JsonBackReference
 	private Support supportReview;
-
-		
-	
-
-
 
 }

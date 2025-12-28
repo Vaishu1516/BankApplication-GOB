@@ -1,5 +1,6 @@
 package com.nirmaan.project.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,16 +15,21 @@ public class KycService {
 	@Autowired
 	public KycRepo kycRepo;
 
+	public List<KycModel> getAll()
+	{
+		return kycRepo.findAll();
+	}
+	
 	public KycModel createKycDetails(KycModel kyc) {
 		return kycRepo.save(kyc);
 
 	}
 
-	public KycModel getExixtingKycDetails(long id) {
-		return kycRepo.findById(id).get();
+	public Optional<KycModel> getExixtingKycDetails(Long id) {
+		return kycRepo.findById(id);
 	}
 
-	public Optional<KycModel> deleteDetails(long id, String name) {
+	public Optional<KycModel> deleteDetails(Long id) {
 		Optional<KycModel> kyc = kycRepo.findById(id);
 		kyc.ifPresent(e -> kycRepo.delete(e));
 		return kyc;
