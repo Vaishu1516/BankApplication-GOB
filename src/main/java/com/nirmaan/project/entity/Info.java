@@ -17,7 +17,6 @@ public class Info {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
 	private Long infoId;
 
 	@ManyToOne

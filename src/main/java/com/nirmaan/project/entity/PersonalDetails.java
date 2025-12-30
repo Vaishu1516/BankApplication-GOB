@@ -23,6 +23,7 @@ public class PersonalDetails {
 
 	private String userName;
 	private Long mobileNumber;
+	private String email;
 	private LocalDate dob;
 	private int age;
 	private String gender;
@@ -30,6 +31,7 @@ public class PersonalDetails {
 	private String nationality;
 	private String fatherName;
 	private String motherName;
+	
 
 	@OneToMany
 	@JsonManagedReference
