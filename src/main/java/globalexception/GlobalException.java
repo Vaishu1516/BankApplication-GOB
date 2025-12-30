@@ -19,6 +19,7 @@ public class GlobalException {
 	                        .build(),
 	                HttpStatus.NOT_FOUND
 	        );
+	        
 	 }
 
 	    @ExceptionHandler(Exception.class)
