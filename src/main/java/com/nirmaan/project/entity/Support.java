@@ -16,7 +16,7 @@ public class Support {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long supportId;
+	private long supportId;
 	
 	private boolean supportOpen;
 	private boolean supportClose;

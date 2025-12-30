@@ -16,7 +16,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
@@ -27,9 +27,10 @@ public class OnBoard {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@ManyToMany
 	private int onBoard_Id;
 	
-	private Long accountNumber;
+	private long accountNumber;
 	private String bankName;
 	private String branchName;
 	private LocalDateTime accountCreatedAt;
@@ -47,11 +48,11 @@ public class OnBoard {
 	@JsonBackReference
 	public PersonalDetails personal_Details;
 
-	@OneToMany(mappedBy = "history", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "accountDetails", cascade = CascadeType.ALL)
 	@JsonManagedReference
 	private List<Transaction> transactions;
 
-	private Long outGoingTransaction;
-	private Long incomingTransaction;
+	private long outGoingTransaction;
+	private long incomingTransaction;
 
 }

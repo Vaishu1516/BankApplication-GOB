@@ -1,11 +1,6 @@
 package com.nirmaan.project.entity;
 
-import java.time.LocalDateTime;
-
-
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
-
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,31 +8,41 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-
 import lombok.Data;
 
 @Entity
 @Data
-public class Transaction {
-
+public class Support {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int transaction_id;
-
+	private long supportId;
+	private boolean supportOpen;
+	private boolean supportClose;
+	private String review;
+	
+	
 	@ManyToOne
+	@JoinColumn(name="kyc_Id")
 	@JsonBackReference
-	@JoinColumn(name = "kyc_Id")
-	private KycModel kycVerifications;
-
+	private KycModel kycmodel;
+	
+	
 	@ManyToOne
+	@JoinColumn(name="infoId")
 	@JsonBackReference
+	private Info infoId;
+	
+	@ManyToOne
 	@JoinColumn(name = "onBoard_Id")
-	private OnBoard history;
-
-	private long income_Transactions;
-	private long Outgoing_Transactions;
-	private long account_Balance;
-	private LocalDateTime timeStamp;
-	private String mini_Statement;
+	@JsonBackReference 
+	private OnBoard onBoard;
+	
+	@ManyToOne
+	@JoinColumn(name = "personal_id")
+	@JsonBackReference
+	private PersonalDetails personalId;
+	
+	
 
 }

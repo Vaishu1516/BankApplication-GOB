@@ -1,40 +1,29 @@
 package com.nirmaan.project.entity;
 
-
-
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.nirmaan.project.VerificationStatus;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.GenerationType; 
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+
 import lombok.Data;
 
 @Entity
 @Data
-public class Verifications {
+public class KycModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int verifications_Id;
-
-	@Enumerated(EnumType.STRING)
-	private VerificationStatus aadharNumber;
-
-	@Enumerated(EnumType.STRING)
-	private VerificationStatus panNumber;
-
-	private boolean signature;
-
-	private String email;
+	private int kyc_Id;
 
 	@ManyToOne
 	@JsonBackReference
-	public PersonalDetails personal_Details;
+	public Verifications kyc_Verifications;
+
+	@Enumerated(EnumType.STRING)
+	private KycModel kyc_Status;
 }

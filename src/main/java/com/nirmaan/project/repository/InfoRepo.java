@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.nirmaan.project.entity.Info;
 
 @Repository
-public interface InfoRepo extends JpaRepository<Info, Long>{
+public interface InfoRepo extends JpaRepository<Info, Long> {
 
 }
