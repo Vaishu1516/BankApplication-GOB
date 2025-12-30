@@ -18,7 +18,7 @@ public class Info {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int infoId;
+	private Long infoId;
 
 	@ManyToOne
 	@JoinColumn(name = "onBoard_Id")

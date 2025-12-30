@@ -22,7 +22,7 @@ public class Transaction {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int transaction_id;
+	private Long transaction_id;
 
 	@ManyToOne
 	@JsonBackReference

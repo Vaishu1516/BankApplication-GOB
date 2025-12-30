@@ -22,7 +22,7 @@ public class Verifications {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int verifications_Id;
+	private Long verifications_Id;
 
 	@Enumerated(EnumType.STRING)
 	private VerificationStatus aadharNumber;

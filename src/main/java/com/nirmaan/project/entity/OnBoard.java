@@ -27,7 +27,7 @@ public class OnBoard {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int onBoard_Id;
+	private Long  onBoard_Id;
 	
 	private Long accountNumber;
 	private String bankName;

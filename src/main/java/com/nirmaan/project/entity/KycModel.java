@@ -19,7 +19,7 @@ public class KycModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int kyc_Id;
+	private Long kyc_Id;
 
 	@ManyToOne
 	@JsonBackReference
