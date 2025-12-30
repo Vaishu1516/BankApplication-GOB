@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<<<<<<< HEAD
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+=======
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+>>>>>>> a4f8f797f127636dd2acef7ab5572f592d18442d
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -8,10 +12,17 @@
 		<version>4.0.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+<<<<<<< HEAD
 	<groupId>com.BankingApp</groupId>
 	<artifactId>BankingApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>BankingApp</name>
+=======
+	<groupId>com.nirmaan</groupId>
+	<artifactId>BankApplication</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>BankApplication</name>
+>>>>>>> a4f8f797f127636dd2acef7ab5572f592d18442d
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
